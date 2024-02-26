@@ -9,11 +9,12 @@ const session=require("express-session")
 const Admin = require('../models/adminModel')
 
 
+
+// loading admin register
 const loadAdminRegister= async(req,res)=>{
     try {
 
         res.render('adminRegister')
-        // res.send("Hai")
         
     } catch (error) {
         console.log(error.message)
@@ -21,7 +22,7 @@ const loadAdminRegister= async(req,res)=>{
     }
 }
 
-
+// verify admin register
 const loadVerifyAdminRegister=async(req,res)=>{
     try{
         const{empId,name,desig,phone,email,password}=req.body
@@ -47,25 +48,38 @@ const loadVerifyAdminRegister=async(req,res)=>{
     }
 }
 
+// admin login page
 const loadAdminLogin=async(req,res)=>{
-    res.render('adminLogin')
+    try{
+        res.render('adminLogin')
+    }catch(error){
+        console.log(error.message)
+    }
+    
 }
 
+// verify admin login
 const loadVerifyAdminLogin= async(req,res) =>{
     try{
-        // const {empId, password}=req.body
-        // const existingAdmin=await Admin.findOne({empId:empId, password:password})
-        // if(existingAdmin){
+        const {empId, password}=req.body
+        const existingAdmin=await Admin.findOne({empId:empId, password:password})
+        if(existingAdmin){
             console.log("logged in Successfully")
             res.redirect('/home')
-        //     res.render('/home')
-        // }
+            res.render('/home')
+        }
         
     }
     catch(error){
         console.log(error.message)
     }
 }
+
+
+
+
+
+// exporting all methods written in admin controller
 module.exports={
             loadAdminRegister,
             loadVerifyAdminRegister,

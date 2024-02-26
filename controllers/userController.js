@@ -4,7 +4,7 @@ const User= require("../models/userModel")
 
 
 
-
+// loading of register page
 const loadSignup= async(req,res)=>{
     try {
 
@@ -16,8 +16,7 @@ const loadSignup= async(req,res)=>{
     }
 }
 
-// verify signup where user data is being save
-
+// verify register where user data is being save
 const verifySignup= async(req,res)=>{
     try {
 
@@ -45,8 +44,31 @@ const verifySignup= async(req,res)=>{
     }
 }
 
-// verify login to check whether is a valid user or not
+// otp page
+const loadOtp= async(req,res)=>{
+    try {
+        
+        res.render("otp")
 
+    } catch (error) {
+
+        console.log(error.message)
+        
+    }
+}
+
+// loading of login page
+const loadLogin = async(req,res)=>{
+    try{
+       res.render('userLogin')
+      // res.send("Hai")
+    }
+    catch{
+        console.log("error")
+    }
+}
+
+// verify login to check whether is a valid user or not
 const verifyLogin = async(req,res)=>{
     try{
         const {mrdno, name, email} = req.body
@@ -65,9 +87,7 @@ const verifyLogin = async(req,res)=>{
 
 }
 
-
 // load home page
-
 const loadHome = async(req,res)=> {
     try{
         res.render("home")
@@ -76,9 +96,7 @@ const loadHome = async(req,res)=> {
     }
 }
 
-
 // load cart page 
-
 const loadCart = async(req,res)=>{
     try{
         res.render('cart')
@@ -88,7 +106,6 @@ const loadCart = async(req,res)=>{
 }
 
 // load payment page
-
 const loadPayment = async(req,res)=>{
     try{
         res.render("payment")
@@ -107,37 +124,19 @@ const loadOrderPlaced = async(req,res)=>{
     }
 }
 
-const loadLogin = async(req,res)=>{
-    try{
-       res.render('userLogin')
-      // res.send("Hai")
-    }
-    catch{
-        console.log("error")
-    }
-}
 
 
 
-const loadOtp= async(req,res)=>{
-    try {
-        
-        res.render("otp")
 
-    } catch (error) {
-
-        console.log(error.message)
-        
-    }
-}
-
+// exporting all methods written
 module.exports={loadSignup,
                 verifySignup,
+                loadOtp,
+                loadLogin,
                 verifyLogin,
                 loadHome,
                 loadCart,
                 loadPayment,
-                loadOrderPlaced,
-                loadLogin,
-                loadOtp}
+                loadOrderPlaced 
+                }
 
