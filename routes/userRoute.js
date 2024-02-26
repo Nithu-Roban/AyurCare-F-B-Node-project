@@ -2,11 +2,14 @@ const express= require('express')
 const path= require('path')
 
 
-const user_Route=express.Router()
+const user_Route=express()
 const session= require("express-session")
 const nodemailer= require("nodemailer")
 
-
+// user_Route.set('view engine', 'ejs');
+// user_Route.set('views', path.join(__dirname, 'view', 'users'));
+user_Route.set("view engine",'ejs')
+user_Route.set('views',"./view/users")
 
 
 // controllers

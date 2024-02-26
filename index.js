@@ -18,8 +18,7 @@ const port=6500
 // app.use("/uploads",express.static("uploads"))
 // Set view engine and views directory on the main app instance
 // 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'view', 'users'));
+
 
 
 // const fs = require('fs');
@@ -32,8 +31,9 @@ app.set('views', path.join(__dirname, 'view', 'users'));
 app.use(nocache())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use("/assets",express.static("assets"))
 app.use(express.static("public"))
+
 
 
 
@@ -48,11 +48,13 @@ app.use(session({
 //user routes
 //const user_Route=require("./routes/userRoute")
 const user_Route = require("./routes/userRoute")
-const admin_Route = require("./routes/adminRoute")
+const admin_Route = require("./routes/admin_Route")
 
 app.use("/",user_Route)
-//app.use("/admin",admin_Route)
+app.use("/admin",admin_Route)
 
 app.listen(port,()=>{
     console.log(`server running at http://localhost:${port}`)
 })
+
+

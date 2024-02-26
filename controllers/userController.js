@@ -50,14 +50,14 @@ const verifySignup= async(req,res)=>{
 const verifyLogin = async(req,res)=>{
     try{
         const {mrdno, name, email} = req.body
-        const isValidUser = await User.findOne({email:email})
+        const isValidUser = await User.findOne({email:email,mrd:mrdno})
         if(isValidUser){
             console.log("Login Successful")
             res.redirect('/home')
         }
         else{
             console.log("Login Failed: User not found");
-            res.redirect('/login');
+            res.redirect('/');
         }
     } catch(error){
         console.log(error.message)
