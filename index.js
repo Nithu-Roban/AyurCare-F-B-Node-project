@@ -45,8 +45,8 @@ app.use(session({
 }))
 
 
-//user routes
-//const user_Route=require("./routes/userRoute")
+// routes
+
 const user_Route = require("./routes/userRoute")
 const admin_Route = require("./routes/admin_Route")
 
