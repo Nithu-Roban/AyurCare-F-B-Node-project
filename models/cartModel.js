@@ -5,8 +5,8 @@ const mongoose= require('mongoose');
 
 const cartSchema= new mongoose.Schema({
     cartId: {type: String,required: true, unique: true},
-    productId: {type: mongoose.Schema.Types.ObjectId,ref:'Product', required: true},   //Foreign key constraint from product 
-    typeId: {type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },   //Foreign key constraint from product
+    productId: {type: mongoose.Schema.Types.ObjectId,ref:'Product', required: true},   //Foreign key reference from product  collection
+    typeId: {type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },   //Foreign key reference from product  collection
     quantity: {type:Number},
     price: {type:Number},
     total: {type: Number},

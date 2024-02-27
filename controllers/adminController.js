@@ -79,7 +79,7 @@ const loadVerifyAdminLogin= async(req,res) =>{
 
 
 
-// exporting all methods written in admin controller
+// exporting all methods written in admin controller=
 module.exports={
             loadAdminRegister,
             loadVerifyAdminRegister,
