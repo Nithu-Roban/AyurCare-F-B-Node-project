@@ -209,8 +209,38 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                
-                                <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
+                                <br><br>
+
+                                <!-- room No -->
+                                <div class="row ">
+                                    <div class="col-md-12 col-lg-6 col-xl-5">
+                                        <label class="form-check-label" for="Payments-1" style="font-weight: bolder; font-size: medium; color: #09778d;"><b>Select Room NO:</b></label>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-xl-5">
+                                        <select class="form-control" id="roomSelect" name="roomSelect" style="font-size: small;">
+                                            <option value="selectRoom" style="text-align: center;">---Select Room---</option>
+                                            <option value="Room 1A">Room 1A</option>
+                                            <option value="Room 1B">Room 1B</option>
+                                            <option value="Room 1A">Room 2A</option>
+                                            <option value="Room 1B">Room 2B</option>
+                                            <option value="Room 1A">Room 3A</option>
+                                            <option value="Room 1B">Room 3B</option>
+                                            <option value="Room 1A">Room 4A</option>
+                                            <option value="Room 1B">Room 4B</option>
+                                            
+                                            <!-- Add more options as needed -->
+                                        </select>
+                                </div>
+                                <br><br><br>
+
+
+                                <!-- payment method -->
+                                <div class="row1 g-4  align-items-center justify-content-center border-bottom py-2">
+                                    <div class="col-md-12 col-lg-6 col-xl-5">
+                                        <label class="form-check-label" for="Payments-1" style="font-weight: bolder; font-size: medium; color: #09778d; "><b>Select Payment method</b></label>
+                                    </div>
+                                </div>
+                                <div class="row1 g-4 text-center align-items-center justify-content-center border-bottom py-2">
                                     <div class="col-12">
                                         <div class="form-check text-start my-3">
                                             <input type="checkbox" class="form-check-input bg-primary border-0" id="Payments-1" name="Payments" value="Payments">
@@ -218,7 +248,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
+                                <div class="row1 g-4 text-center align-items-center justify-content-center border-bottom py-3">
                                     <div class="col-12">
                                         <div class="form-check text-start my-3">
                                             <input type="checkbox" class="form-check-input bg-primary border-0" id="Delivery-1" name="Delivery" value="Delivery">
@@ -226,7 +256,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
+                                <div class="row1 g-4 text-center align-items-center justify-content-center border-bottom py-3">
                                     <div class="col-12">
                                         <div class="form-check text-start my-3">
                                             <input type="checkbox" class="form-check-input bg-primary border-0" id="Paypal-1" name="Paypal" value="Paypal">
@@ -234,10 +264,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                                <div class="row1 g-4 text-center align-items-center justify-content-center pt-4">
                                     <button type="submit" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary"> Place Order </button>
                                 </div>
                             </div>
+
                         </div>
                     </form>
                 </div>
